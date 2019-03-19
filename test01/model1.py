@@ -9,5 +9,4 @@ class Model1(BaseModel):
 
 
 if __name__ == '__main__':
-    print()
     print(Model1()())

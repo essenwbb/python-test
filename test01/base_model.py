@@ -5,9 +5,6 @@ import time
 class BaseModel:
     _subclass_basename = ''
 
-    def __init__(self):
-        pass
-
     @property
     def name(self):
         return self._subclass_basename[:-3]
