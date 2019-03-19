@@ -3,19 +3,19 @@ import time
 
 
 class BaseModel:
-    _birth = 0
+    _subclass_basename = ''
 
     def __init__(self):
         pass
 
     @property
-    def age(self):
-        return time.localtime().tm_year - self._birth
+    def name(self):
+        return self._subclass_basename[:-3]
 
     @abstractmethod
-    def init_birth(self):
+    def init_subclass_basename(self):
         pass
 
     def __call__(self, *args, **kwargs):
-        self.init_birth()
-        return self.age
+        self.init_subclass_basename()
+        return self.name
